@@ -106,7 +106,7 @@ class Movie {
         });
 
         console.log('id2 Value:', id2Value);
-        return 'https'+id2Value
+        return 'https:'+id2Value
     }
     async parseMovies(html = '') {
         const $ = cheerio.load(html)
@@ -115,7 +115,7 @@ class Movie {
         await items.each((i, el) => {
             const movieElement = $(el);
 
-            const http = 'https';
+            const http = 'https:';
             const link = http + $('.ml-item a').attr('href');
             const thumbnail = http + movieElement.find('.mli-thumb').attr('data-original');
             const thumbnailName = thumbnail.split('/').pop().split('.')[0];
